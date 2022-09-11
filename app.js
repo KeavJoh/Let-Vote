@@ -4,6 +4,12 @@ const app = Vue.createApp({
         return {
             submissions: submissions //aus seed.js
         }
+    },
+    methods: {
+        // upvote: function() {}
+        upvote() {
+            this.submissions[0].votes++;
+        },
     }
 })
 
