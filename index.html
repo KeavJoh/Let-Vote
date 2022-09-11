@@ -31,17 +31,18 @@
                   <div class="card-body">
                     <div class="d-flex">
                       <div class="d-shrink-0">
-                        <img src="https://via.placeholder.com/60" alt="placeholder" />
+                        <img v-bind:src="submissions[0].img" alt="placeholder" />
                       </div>
                       <div class="flex-grow-1 ms-3">
-                        <h5>
-                          Spaghetti Bolognese
+                        <h5 v-once>
+                          {{ submissions[0].title }}
                           <span class="float-end text-primary" style="cursor: pointer"
-                            ><i class="fa fa-chevron-up"></i><strong>16</strong></span
+                            ><i class="fa fa-chevron-up"></i><strong>{{ submissions[0].votes }}</strong></span
                           >
                         </h5>
-                        <div>Ein Nudelgericht mit Hackfleischsße</div>
-                        <small class="text-muted">Eingereicht von Italien</small>
+                        <!-- <div>{{ submissions[0].desc }}</div> -->
+                        <div v-html="submissions[0].desc"></div>
+                        <small class="text-muted">Gericht kommt aus: {{ submissions[0].author }}</small>
                       </div>
                     </div>
                   </div>
