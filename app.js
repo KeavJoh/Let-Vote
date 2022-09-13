@@ -10,6 +10,11 @@ const app = Vue.createApp({
       return this.submissions.reduce((totalVotes, submissions) => {
         return totalVotes + submissions.votes;
       }, 0);
+    },
+    sortedSubmissions() {
+      return this.submissions.sort((a, b) => {
+        return b.votes - a.votes;
+      });
     }
   },
   methods: {
