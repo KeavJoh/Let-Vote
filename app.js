@@ -15,14 +15,17 @@ const app = Vue.createApp({
       return this.submissions.sort((a, b) => {
         return b.votes - a.votes;
       });
-    }
+    },
   },
   methods: {
     // upvote: function() {}
-    upvote() {
-      this.submissions[0].votes++;
+    upvote(submissionID) {
+      const submission = this.submissions.find(
+        (submission) => submission.id === submissionID
+      );
+      submission.votes++;
     },
-  }
+  },
 });
 
 // Liefert die Instanz zur Root-Component zurück
