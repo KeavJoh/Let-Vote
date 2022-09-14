@@ -21,6 +21,11 @@ const app = Vue.createApp({
         "bg-primary": this.totalVotes >= 50,
         "text-white": this.totalVotes >= 50,
       }
+    },
+    cardTitleFontSize() {
+      return {
+        fontSize: this.totalVotes + "px"
+      }
     }
   },
   methods: {
