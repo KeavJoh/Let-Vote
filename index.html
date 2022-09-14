@@ -25,8 +25,8 @@
         <div class="row">
           <div class="col-xl-4 offset-xl-4">
             <div class="card mt-5">
-              <div class="card-head" v-bind:class="cardHeaderBackgroundColor">
-                <h2 class="card-title" v-bind:style="cardTitleFontSize">
+              <div class="card-head" :class="cardHeaderBackgroundColor">
+                <h2 class="card-title" :style="cardTitleFontSize">
                   Stimme jetzt ab!
                   <span class="float-end">{{ totalVotes }} Stimmen</span>
                 </h2>
@@ -34,10 +34,10 @@
               <div class="card-body">
                 <template
                   v-for="submission in sortedSubmissions"
-                  v-bind:key="submission.id"
+                  :key="submission.id"
                 >
                   <submission-list-item
-                    v-bind:submission="submission"
+                    :submission="submission"
                   ></submission-list-item>
                   <hr />
                 </template>

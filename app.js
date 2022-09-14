@@ -51,7 +51,7 @@ app.component("SubmissionListItem", {
   template: `
   <div class="d-flex">
    <div class="d-shrink-0">
-    <img v-bind:src="submission.img" alt="placeholder" />
+    <img :src="submission.img" alt="placeholder" />
    </div>
    <div class="flex-grow-1 ms-3">
     <!-- <h5 v-once> -->
@@ -60,7 +60,7 @@ app.component("SubmissionListItem", {
       <span
         class="float-end text-primary"
         style="cursor: pointer"
-        v-on:click="upvote()"
+        @click="upvote()"
         ><i class="fa fa-chevron-up"></i
         ><strong>{{ submission.votes }}</strong></span
       >
